@@ -1,5 +1,6 @@
-package com.example
+package com.parallacks
 
+import com.parallacks.view.StartView
 import org.hexworks.zircon.api.CP437TilesetResources
 import org.hexworks.zircon.api.ColorThemes
 import org.hexworks.zircon.api.Components
@@ -15,11 +16,6 @@ fun main(args: Array<String>) {
                     .build())
 
     val screen = tileGrid.toScreen()
-
-    screen.addComponent(Components.label()
-            .withText("Hello, Zircon!")
-            .withPosition(23, 10))
-
-    screen.display()
-    screen.theme = ColorThemes.arc()
+    val theme = ColorThemes.defaultTheme()
+    StartView(tileGrid, theme).dock()
 }
